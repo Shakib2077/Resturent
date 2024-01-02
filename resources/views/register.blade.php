@@ -21,7 +21,7 @@
                     <label>Contact</label>
                     <input type="text" name="contact" class="form-control" placeholder="Contact number">
                 </div><br>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
         </form>
 </div>
 @stop
