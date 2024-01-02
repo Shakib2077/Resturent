@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Restaurent;
 use Session;
+use Hash;
+use App\Models\User;
 
 class RestroController extends Controller
 {
@@ -56,7 +58,13 @@ class RestroController extends Controller
     }
     function register(Request $req)
     {
-        return $req->input();
-        // return view('register');
+        $user = new User;
+        $user->name=$req->input('name');
+        $user->email=$req->input('email');
+        $user->password=Hash::make($req->input('password'));
+        $user->contact=$req->input('contact');
+        $user->save();
+        $req->session()->put('user', $req->input('name'));
+        return redirect('/');
     }
 }
