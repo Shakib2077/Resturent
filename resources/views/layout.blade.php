@@ -14,7 +14,7 @@
 </head>
     <body>
     <header>
-        <!-- <div class="container"> -->
+
             <nav class="navbar navbar-expand-sm bg-info">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">ReStro</a>
@@ -37,11 +37,11 @@
                     </div>
                 </div>
             </nav>
-        <!-- </div> -->
+
     </header>
 <div>
     @yield('content')
 </div>
-    <!-- <footer>Copyright 2023@SHakib</footer> -->
+
 </body>
 </html>

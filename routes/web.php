@@ -14,13 +14,10 @@ use App\Http\Controllers\RestroController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::view('add', 'add');
 
-Route::view('register', 'register');
+Route::view("register", "register");
 
 Route::get('/', [RestroController::class, 'index']);
 
