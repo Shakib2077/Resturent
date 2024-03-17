@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RestroController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,21 +15,20 @@ use App\Http\Controllers\RestroController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::view('add', 'add');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::view("register", "register");
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Route::get('/', [RestroController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
 
-Route::get('/list', [RestroController::class, 'list']);
-
-Route::post('/add', [RestroController::class, 'add']);
-
-Route::get('/delete/{id}', [RestroController::class, 'delete']);
-
-Route::get('/edit/{id}', [RestroController::class, 'edit']);
-
-Route::post('/edit', [RestroController::class, 'update']);
-
-Route::post('/register', [RestroController::class, 'register']);
+require __DIR__.'/auth.php';
