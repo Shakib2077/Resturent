@@ -35,6 +35,8 @@ Route::post('/uploadfood', [AdminController::class, 'uploadfood'])->name('upload
 Route::get('/deletemenu/{id}', [AdminController::class, 'deletemenu'])->name('deletemenu');
 Route::get('/updateview/{id}', [AdminController::class, 'updateview'])->name('updateview');
 Route::post('/update/{id}', [AdminController::class, 'update'])->name('update');
+Route::post('/reservation', [AdminController::class, 'reservation'])->name('reservation');
+Route::get('/viewreservation', [AdminController::class, 'viewreservation'])->name('viewreservation');
 
 
 require __DIR__.'/auth.php';
