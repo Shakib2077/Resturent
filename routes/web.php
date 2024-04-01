@@ -35,8 +35,14 @@ Route::post('/uploadfood', [AdminController::class, 'uploadfood'])->name('upload
 Route::get('/deletemenu/{id}', [AdminController::class, 'deletemenu'])->name('deletemenu');
 Route::get('/updateview/{id}', [AdminController::class, 'updateview'])->name('updateview');
 Route::post('/update/{id}', [AdminController::class, 'update'])->name('update');
-Route::post('/reservation', [AdminController::class, 'reservation'])->name('reservation');
+Route::get('/reservation', [AdminController::class, 'reservation'])->name('reservation');
 Route::get('/viewreservation', [AdminController::class, 'viewreservation'])->name('viewreservation');
+Route::get('/viewchef', [AdminController::class, 'viewchef'])->name('viewchef');
 
+Route::post('/uploadchef', [AdminController::class, 'uploadchef'])->name('uploadchef');
+
+Route::get('/updatechef/{id}', [AdminController::class, 'updatechef'])->name('updatechef');
+Route::post('/updatefoodchef/{id}', [AdminController::class, 'updatefoodchef'])->name('updatefoodchef');
+Route::get('/deletechef/{id}', [AdminController::class, 'deletechef'])->name('deletechef');
 
 require __DIR__.'/auth.php';
