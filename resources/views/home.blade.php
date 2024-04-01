@@ -67,9 +67,28 @@
                                 </ul>
                             </li>
                             <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
-                            <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>
+                            <li class="scroll-to-section" ><a href="#reservation">Contact Us</a></li>
 
-                            <li>
+                            <li class="scroll-to-section">
+
+                                @auth
+
+                                 <a href="{{url('/showcart',Auth::user()->id)}}">Cart({{$count}})</a>
+
+                                 @endauth
+
+                                 @guest
+                                     Cart[0]
+                                 @endguest
+
+                             </a></li>
+
+                             <a class='menu-trigger'>
+                                 <span>Menu</span>
+                             </a>
+
+
+                            <li class="scroll-to-section">
                                 @if (Route::has('login'))
                                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                                     @auth

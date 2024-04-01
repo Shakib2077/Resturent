@@ -38,11 +38,12 @@ Route::post('/update/{id}', [AdminController::class, 'update'])->name('update');
 Route::get('/reservation', [AdminController::class, 'reservation'])->name('reservation');
 Route::get('/viewreservation', [AdminController::class, 'viewreservation'])->name('viewreservation');
 Route::get('/viewchef', [AdminController::class, 'viewchef'])->name('viewchef');
-
 Route::post('/uploadchef', [AdminController::class, 'uploadchef'])->name('uploadchef');
-
 Route::get('/updatechef/{id}', [AdminController::class, 'updatechef'])->name('updatechef');
 Route::post('/updatefoodchef/{id}', [AdminController::class, 'updatefoodchef'])->name('updatefoodchef');
 Route::get('/deletechef/{id}', [AdminController::class, 'deletechef'])->name('deletechef');
+Route::post('/addcart/{id}', [HomeController::class, 'addcart'])->name('addcart');
+
+
 
 require __DIR__.'/auth.php';
