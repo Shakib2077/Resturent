@@ -69,19 +69,14 @@
                             <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
                             <li class="scroll-to-section" ><a href="#reservation">Contact Us</a></li>
 
-                            <li class="scroll-to-section">
-
-                                @auth
-
-                                 <a href="{{url('/showcart',Auth::user()->id)}}">Cart({{$count}})</a>
-
-                                 @endauth
-
-                                 @guest
-                                     Cart[0]
-                                 @endguest
-
-                             </a></li>
+        <li class="scroll-to-section">
+                 @auth
+                    <a href="{{ route('showcart', Auth::user()->id) }}">Cart({{ \App\Models\Cart::where('user_id', Auth::id())->count() }})</a>
+                @endauth
+                @guest
+                Cart[0]
+            @endguest
+        </li>
 
                              <a class='menu-trigger'>
                                  <span>Menu</span>

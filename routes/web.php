@@ -35,7 +35,7 @@ Route::post('/uploadfood', [AdminController::class, 'uploadfood'])->name('upload
 Route::get('/deletemenu/{id}', [AdminController::class, 'deletemenu'])->name('deletemenu');
 Route::get('/updateview/{id}', [AdminController::class, 'updateview'])->name('updateview');
 Route::post('/update/{id}', [AdminController::class, 'update'])->name('update');
-Route::get('/reservation', [AdminController::class, 'reservation'])->name('reservation');
+Route::post('/reservation', [AdminController::class, 'reservation'])->name('reservation');
 Route::get('/viewreservation', [AdminController::class, 'viewreservation'])->name('viewreservation');
 Route::get('/viewchef', [AdminController::class, 'viewchef'])->name('viewchef');
 Route::post('/uploadchef', [AdminController::class, 'uploadchef'])->name('uploadchef');
@@ -43,6 +43,10 @@ Route::get('/updatechef/{id}', [AdminController::class, 'updatechef'])->name('up
 Route::post('/updatefoodchef/{id}', [AdminController::class, 'updatefoodchef'])->name('updatefoodchef');
 Route::get('/deletechef/{id}', [AdminController::class, 'deletechef'])->name('deletechef');
 Route::post('/addcart/{id}', [HomeController::class, 'addcart'])->name('addcart');
+Route::get('/showcart/{id}', [HomeController::class, 'showcart'])->name('showcart');
+Route::get('/remove/{id}', [HomeController::class, 'remove'])->name('remove');
+Route::post('/orderconfirm', [HomeController::class, 'orderconfirm'])->name('orderconfirm');
+
 
 
 
