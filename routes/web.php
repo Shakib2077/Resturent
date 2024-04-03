@@ -46,7 +46,8 @@ Route::post('/addcart/{id}', [HomeController::class, 'addcart'])->name('addcart'
 Route::get('/showcart/{id}', [HomeController::class, 'showcart'])->name('showcart');
 Route::get('/remove/{id}', [HomeController::class, 'remove'])->name('remove');
 Route::post('/orderconfirm', [HomeController::class, 'orderconfirm'])->name('orderconfirm');
-
+Route::get('/orders', [AdminController::class, 'orders'])->name('orders');
+Route::get('/search', [AdminController::class, 'search'])->name('search');
 
 
 
